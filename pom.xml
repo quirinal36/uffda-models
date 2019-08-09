@@ -11,6 +11,13 @@
 	<name>UffdaModels</name>
 	<url>https://github.com/quirinal36/uffda-models</url>
 	
+	<scm>
+		<url>https://github.com/quirinal36/uffda-models</url>
+		<connection>scm:git:https://github.com/quirinal36/uffda-models.git</connection>
+		<developerConnection>scm:git:https://github.com/quirinal36/uffda-models.git</developerConnection>
+	  <tag>HEAD</tag>
+	</scm>
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
