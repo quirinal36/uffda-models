@@ -1088,19 +1088,28 @@ public class ImpResult extends Paging implements Serializable, Comparable<ImpRes
     		try {
     			result.setPayMethod(json.getString(payMethodKey));
 
-    			switch(result.getPayMethod()) {
-    				case ImpResult.CARD_PAID:
-    					result.setPayMethodView(ImpResult.CARD_PAID_TXT);
-    					break;
-    				case ImpResult.VBANK_PAID:
-    					result.setPayMethodView(ImpResult.VBANK_PAID_TXT);
-    					break;
-    				case ImpResult.TRANS_PAID:
-    					result.setPayMethodView(ImpResult.TRANS_PAID_TXT);
-    					break;
-    				case ImpResult.PHONE_PAID:
-    					result.setPayMethodView(ImpResult.PHONE_PAID_TXT);
-    					break;
+//    			switch(result.getPayMethod()) {
+//    				case ImpResult.CARD_PAID:
+//    					result.setPayMethodView(ImpResult.CARD_PAID_TXT);
+//    					break;
+//    				case ImpResult.VBANK_PAID:
+//    					result.setPayMethodView(ImpResult.VBANK_PAID_TXT);
+//    					break;
+//    				case ImpResult.TRANS_PAID:
+//    					result.setPayMethodView(ImpResult.TRANS_PAID_TXT);
+//    					break;
+//    				case ImpResult.PHONE_PAID:
+//    					result.setPayMethodView(ImpResult.PHONE_PAID_TXT);
+//    					break;
+//    			}
+    			if(result.getPayMethod().equalsIgnoreCase(ImpResult.CARD_PAID)) {
+    				result.setPayMethodView(ImpResult.CARD_PAID_TXT);
+    			}else if(result.getPayMethod().equalsIgnoreCase(ImpResult.VBANK_PAID)) {
+    				result.setPayMethodView(ImpResult.VBANK_PAID_TXT);
+    			}else if(result.getPayMethod().equalsIgnoreCase(ImpResult.TRANS_PAID)) {
+    				result.setPayMethodView(ImpResult.TRANS_PAID_TXT);
+    			}else if(result.getPayMethod().equalsIgnoreCase(ImpResult.PHONE_PAID)) {
+    				result.setPayMethodView(ImpResult.PHONE_PAID_TXT);
     			}
     		}catch (Exception e) {
     			logger.info(e.getMessage());
