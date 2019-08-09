@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>www.uffda</groupId>
-	<artifactId>kr</artifactId>
+	<groupId>com.github.quirinal36</groupId>
+	<artifactId>uffda-models</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>kr</name>
-	<url>http://maven.apache.org</url>
+	<name>UffdaModels</name>
+	<url>https://github.com/quirinal36/uffda-models</url>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
