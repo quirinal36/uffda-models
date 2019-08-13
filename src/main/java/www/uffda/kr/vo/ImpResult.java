@@ -11,7 +11,9 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
@@ -102,6 +104,7 @@ public class ImpResult extends Paging implements Serializable, Comparable<ImpRes
     private final static String	successKey			= "success";
     private final static String	errorMsgKey			= "error_msg";
     private final static String couponKey			= "coupon";
+    
     private int        id           ; // Primary Key
 
     private int			userId		;
@@ -163,13 +166,14 @@ public class ImpResult extends Paging implements Serializable, Comparable<ImpRes
     private String		refund_account; // 환불계좌 계좌번호
     private String		refund_bank;	// 환불계좌 은행코드
     private String		refund_holder;	// 환불계좌 예금주
-    
+    public static Map<Integer, String> statusMap;
     /**
      * Default constructor
      */
     public ImpResult()
     {
     	cartList = new ArrayList<Cart>();
+    	setStatusMap();
     }
     public static ImpResult newInstance() {
     	ImpResult result = new ImpResult();
@@ -180,7 +184,19 @@ public class ImpResult extends Paging implements Serializable, Comparable<ImpRes
     	result.setUserId(userId);
     	return result;
     }
-    
+    private void setStatusMap() {
+    	statusMap = new HashMap<Integer, String>();
+    	statusMap.put(1, "입금대기");
+    	statusMap.put(2, "결제완료");
+    	statusMap.put(3, "주문취소");
+    	statusMap.put(4, "상품 준비 중");
+    	statusMap.put(5, "배송 준비 중");
+    	statusMap.put(6, "배송 중");
+    	statusMap.put(7, "배송 완료");
+    	statusMap.put(8, "환불 진행 중");
+    	statusMap.put(9, "환불 완료");
+    	statusMap.put(12, "구매 확정");
+    }
     public static String[] getPayMethods() {
 		return PAY_METHODS;
 	}
