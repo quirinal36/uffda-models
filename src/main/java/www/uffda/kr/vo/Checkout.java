@@ -34,6 +34,7 @@ public class Checkout {
 	private int impResultStatus;
 	private AddressBook addressBook;
 	private int price;
+	private String shippingInfo;
 	
 	public Checkout() {
 	}
@@ -191,6 +192,12 @@ public class Checkout {
 	}
 	public void setPrice(int price) {
 		this.price = price;
+	}
+	public String getShippingInfo() {
+		return shippingInfo;
+	}
+	public void setShippingInfo(String shippingInfo) {
+		this.shippingInfo = shippingInfo;
 	}
 	@Override
 	public String toString() {

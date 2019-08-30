@@ -6,7 +6,7 @@
 
 	<groupId>com.github.quirinal36</groupId>
 	<artifactId>uffda-models</artifactId>
-	<version>0.0.4.2</version>
+	<version>0.0.4.3</version>
 	<packaging>jar</packaging>
 
 	<name>UffdaModels</name>
